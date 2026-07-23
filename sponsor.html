@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partner With Us – Sponsor the Next Generation | Whitehead Vultures</title>
-    <meta name="description" content="Christian-based sports academy in Harare since 1996. Developing youth through football, basketball, volleyball and athletics. Mabelreign, Harare, Zimbabwe.">
+    <meta name="description" content="Sponsor Whitehead Vultures Academy - Kit, tournaments, health workshops. Christian academy in Harare since 1996 serving 30+ youth.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/logo.jpg">
+    <style>
+        .sponsor-hero { background: linear-gradient(135deg, #0a4da6 0%, #1e3a8a 100%); color:white; padding:60px 20px 50px; text-align:center; position:relative; overflow:hidden; }
+        .sponsor-hero::before { content:''; position:absolute; top:-50px; right:-50px; width:300px; height:300px; background:rgba(255,255,255,0.05); border-radius:50%; }
+        .sponsor-hero::after { content:''; position:absolute; bottom:-80px; left:-80px; width:400px; height:400px; background:rgba(37,211,102,0.08); border-radius:50%; }
+        .sponsor-hero .container { position:relative; z-index:1; }
+        .sponsor-hero h2 { font-size:36px; font-weight:900; letter-spacing:-0.6px; line-height:1.15; max-width:720px; margin:0 auto 14px; }
+        .sponsor-hero p { max-width:700px; margin:0 auto 28px; font-size:16px; line-height:1.6; opacity:0.9; }
+        .sponsor-stats { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px; }
+        .sponsor-stat { background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:14px 20px; min-width:120px; }
+        .sponsor-stat strong { display:block; font-size:24px; font-weight:900; color:#25D366; }
+        .sponsor-stat span { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.6px; opacity:0.8; }
+
+        .sponsor-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:-30px auto 36px; max-width:1100px; position:relative; z-index:2; padding:0 20px; }
+        @media(max-width:900px){ .sponsor-tiers{ grid-template-columns:1fr; margin-top:20px; } }
+        .tier-card { background:white; border-radius:18px; padding:28px 24px; box-shadow:0 12px 32px rgba(0,0,0,0.12); border:1px solid #eef2f7; transition:all 0.3s; position:relative; overflow:hidden; }
+        .tier-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
+        .tier-card.featured { border:2px solid #0a4da6; transform:scale(1.02); }
+        .tier-card.featured::before { content:'Most Popular'; position:absolute; top:14px; right:-30px; background:#0a4da6; color:white; font-size:10px; font-weight:800; letter-spacing:0.6px; padding:4px 36px; transform:rotate(35deg); }
+        .tier-icon { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:16px; }
+        .tier-card h3 { font-size:17px; font-weight:800; margin-bottom:6px; color:#111827; }
+        .tier-card .price { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; color:#0a4da6; margin-bottom:10px; }
+        .tier-card p { font-size:13px; color:#6b7280; line-height:1.6; margin-bottom:14px; }
+        .tier-list { list-style:none; padding:0; margin:0 0 18px; }
+        .tier-list li { font-size:12.5px; color:#374151; padding:6px 0; display:flex; gap:8px; align-items:flex-start; }
+        .tier-list li::before { content:'✓'; color:#0f8a4b; font-weight:900; flex-shrink:0; }
+
+        .impact-list-modern { max-width:800px; margin:36px auto; background:white; border:1px solid #eef2f7; border-radius:16px; padding:24px; }
+        .impact-list-modern h3 { font-size:18px; font-weight:800; margin-bottom:16px; text-align:center; }
+        .impact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; text-align:center; }
+        @media(max-width:600px){ .impact-grid{ grid-template-columns:1fr; } }
+        .impact-item { background:#f8fafc; border-radius:10px; padding:16px; }
+        .impact-item strong { display:block; font-size:16px; font-weight:800; color:#111827; margin-bottom:4px; }
+        .impact-item span { font-size:12px; color:#6b7280; }
+
+        .cta-sponsor { text-align:center; margin:36px auto; max-width:700px; }
+        .cta-sponsor h3 { font-size:22px; font-weight:800; margin-bottom:10px; }
+        .cta-sponsor p { color:#6b7280; font-size:14px; line-height:1.6; margin-bottom:18px; }
+        .btn-row { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:16px 0; }
+        .btn-whatsapp { display:inline-flex; align-items:center; gap:8px; background:#25D366; color:white; padding:12px 20px; border-radius:99px; font-weight:700; font-size:13px; text-decoration:none; transition:all 0.2s; }
+        .btn-whatsapp:hover { background:#128C7E; transform:translateY(-2px); }
+        .btn-email { display:inline-flex; align-items:center; gap:8px; background:#111827; color:white; padding:12px 20px; border-radius:99px; font-weight:700; font-size:13px; text-decoration:none; }
+        .btn-outline { display:inline-flex; align-items:center; gap:8px; background:white; color:#0a4da6; border:2px solid #0a4da6; padding:10px 18px; border-radius:99px; font-weight:700; font-size:13px; text-decoration:none; }
+    </style>
 </head>
 <body>
 
@@ -29,7 +72,6 @@
 <a href="gallery.html">Gallery</a>
 <a href="sponsor.html" style="color:#0a4da6;font-weight:800;">Sponsor</a>
 <a href="contact.html">Contact</a>
-
             </nav>
             <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -43,51 +85,104 @@
 <a href="gallery.html">Gallery</a>
 <a href="sponsor.html">Sponsor</a>
 <a href="contact.html">Contact</a>
-
             </div>
         </div>
     </div>
 </header>
 
 <main>
-<section id="sponsor" style="background:#0a4da6;color:white;padding:80px 20px;">
-<div class="container" style="max-width:1100px;margin:0 auto;">
-<h2 style="text-align:center;font-size:2.5rem;margin-bottom:20px;">Partner With Us – Sponsor the Next Generation</h2>
-<p style="text-align:center;max-width:800px;margin:0 auto 40px;font-size:1.1rem;opacity:0.95;">The growth of Whitehead Vultures Academy is reliant on sponsorship and partnership with critical stakeholders. Since 1996, we've used sport to fight disease burden and substance abuse in Harare, reaching youth in Mabelreign, Chitungwiza, Ruwa, Marondera and Norton.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
-<div style="background:white;color:#1a1a1a;padding:30px;border-radius:12px;">
-<h3 style="color:#0a4da6;margin-top:0;">Kit &amp; Equipment Sponsor</h3>
-<p>Provide training kits, footballs, bibs, cones for 30+ athletes aged 6-20</p>
-</div>
-<div style="background:white;color:#1a1a1a;padding:30px;border-radius:12px;">
-<h3 style="color:#0a4da6;margin-top:0;">Tournament &amp; Health Workshop Sponsor</h3>
-<p>Fund themed fundraising sports tournaments with health authorities and leadership seminars</p>
-</div>
-<div style="background:white;color:#1a1a1a;padding:30px;border-radius:12px;">
-<h3 style="color:#0a4da6;margin-top:0;">Development Sponsor</h3>
-<p>Support coaching workshops, transport to development matches, and life skills learning programs</p>
+
+<div class="sponsor-hero">
+<div class="container">
+<h2>Partner With Us — Sponsor the Next Generation</h2>
+<p>The growth of Whitehead Vultures Academy is reliant on sponsorship and partnership with critical stakeholders. Since 1996, we've used sport to fight disease burden and substance abuse in Harare, reaching youth in Mabelreign, Chitungwiza, Ruwa, Marondera and Norton.</p>
+<div class="sponsor-stats">
+<div class="sponsor-stat"><strong>30+</strong><span>Athletes Sponsored</span></div>
+<div class="sponsor-stat"><strong>29 Yrs</strong><span>Community Trust</span></div>
+<div class="sponsor-stat"><strong>5 Areas</strong><span>Harare Region</span></div>
+<div class="sponsor-stat"><strong>11</strong><span>Dedicated Leaders</span></div>
 </div>
 </div>
-<p style="text-align:center;font-style:italic;opacity:0.9;">Our academy runs regular workshops to raise awareness on key health issues and facilitate dialogue in the community.</p>
-<ul style="max-width:600px;margin:20px auto;list-style:none;padding:0;">
-<li>✓ Increased health knowledge</li>
-<li>✓ Reduced substance abuse</li>
-<li>✓ Sport as a vehicle for hope</li>
+</div>
+
+<div class="container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
+<div class="sponsor-tiers">
+
+<div class="tier-card">
+<div class="tier-icon" style="background:linear-gradient(135deg, #eff6ff, #bfdbfe);">👕</div>
+<h3>Kit & Equipment Sponsor</h3>
+<div class="price">From $150 / season</div>
+<p>Provide training kits, footballs, bibs, cones for 30+ athletes aged 6-20. Your logo on training kits.</p>
+<ul class="tier-list">
+<li>Training kits for 10 kids</li>
+<li>Footballs, bibs, cones</li>
+<li>Logo on academy banner</li>
+<li>Monthly progress photos</li>
 </ul>
-<div style="text-align:center;margin-top:30px;">
-<div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
-<a href="https://wa.me/263772900990" style="display:inline-block;background:#25D366;color:white;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;" target="_blank">WhatsApp 0772 900 990</a>
-<a href="https://wa.me/263715291783" style="display:inline-block;background:#25D366;color:white;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;" target="_blank">WhatsApp 0715 291 783</a>
-<a href="https://wa.me/263778196467" style="display:inline-block;background:#25D366;color:white;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:600;" target="_blank">WhatsApp 0778 196 467</a>
+<a href="https://wa.me/263772900990?text=Interested%20in%20Kit%20Sponsorship%20for%20Vultures%20Academy" class="btn-whatsapp" target="_blank">Sponsor Kits →</a>
 </div>
-<div style="margin-top:16px;">
-<a href="mailto:vulturesacademyofsports@gmail.com" style="display:inline-block;background:white;color:#0a4da6;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;margin:8px;">Email Proposal</a>
-<a href="https://wa.me/263772900990?text=Interested%20in%20sponsoring%20Vultures%20Academy" style="display:inline-block;background:#25D366;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;margin:8px;" target="_blank">WhatsApp Sponsor Inquiry</a>
+
+<div class="tier-card featured">
+<div class="tier-icon" style="background:linear-gradient(135deg, #ecfdf5, #a7f3d0);">🏆</div>
+<h3>Tournament & Health Workshop Sponsor</h3>
+<div class="price">From $300 / tournament</div>
+<p>Fund themed fundraising sports tournaments with health authorities and leadership seminars for every child.</p>
+<ul class="tier-list">
+<li>Full tournament funding</li>
+<li>Health workshop with authorities</li>
+<li>Branding on tournament kits</li>
+<li>Media coverage & certificates</li>
+<li>Impact report with photos</li>
+</ul>
+<a href="https://wa.me/263772900990?text=Interested%20in%20Tournament%20Sponsorship%20for%20Vultures%20Academy" class="btn-whatsapp" target="_blank">Sponsor Tournament →</a>
 </div>
+
+<div class="tier-card">
+<div class="tier-icon" style="background:linear-gradient(135deg, #fef3c7, #fde68a);">🚀</div>
+<h3>Development Sponsor</h3>
+<div class="price">Custom • Monthly/Annual</div>
+<p>Support coaching workshops, transport to development matches, life skills learning and administrative costs.</p>
+<ul class="tier-list">
+<li>Coaching education</li>
+<li>Transport to matches</li>
+<li>Life skills curriculum</li>
+<li>Admin budget support</li>
+</ul>
+<a href="https://wa.me/263772900990?text=Interested%20in%20Development%20Sponsorship%20for%20Vultures%20Academy" class="btn-whatsapp" target="_blank">Become Partner →</a>
 </div>
-<p style="text-align:center;margin-top:20px;font-size:0.9rem;opacity:0.8;">Administrative budget requirements available on request</p>
+
 </div>
-</section>
+
+<div class="impact-list-modern">
+<h3>What Your Sponsorship Creates</h3>
+<div class="impact-grid">
+<div class="impact-item"><strong>✓ Increased health knowledge</strong><span>Workshops with local health authorities for youth and parents</span></div>
+<div class="impact-item"><strong>✓ Reduced substance abuse</strong><span>Safe, disciplined alternative every Tue, Thu & Sat</span></div>
+<div class="impact-item"><strong>✓ Sport as vehicle for hope</strong><span>Moving 30+ youth from streets to pitch since 1996</span></div>
+</div>
+<p style="text-align:center; font-size:12px; color:#9ca3af; margin-top:16px;">Our academy runs regular workshops to raise awareness on key health issues and facilitate dialogue in the community. Administrative budget requirements available on request.</p>
+</div>
+
+<div class="cta-sponsor">
+<h3>Ready to Make an Impact?</h3>
+<p>Whether you're a business, church, individual or former player — your support keeps 30+ athletes training at Mabelreign Girls High School. Let's talk about a partnership that fits your heart and budget.</p>
+
+<div class="btn-row">
+<a href="https://wa.me/263772900990" class="btn-whatsapp" target="_blank">💬 0772 900 990</a>
+<a href="https://wa.me/263715291783" class="btn-whatsapp" target="_blank">💬 0715 291 783</a>
+<a href="https://wa.me/263778196467" class="btn-whatsapp" target="_blank">💬 0778 196 467</a>
+</div>
+
+<div class="btn-row">
+<a href="mailto:vulturesacademyofsports@gmail.com?subject=Sponsorship Inquiry - Whitehead Vultures Academy" class="btn-email">📧 Email Proposal</a>
+<a href="https://wa.me/263772900990?text=Interested%20in%20sponsoring%20Vultures%20Academy%20-%20Please%20send%20admin%20budget" class="btn-outline" target="_blank">📄 Request Budget</a>
+</div>
+
+<p style="font-size:12px; color:#9ca3af; margin-top:12px;">We respond within 24 hours • Faith-based • Registered community academy</p>
+</div>
+
+</div>
+
 </main>
 
 <footer class="footer">
@@ -110,89 +205,20 @@
     <img id="lightbox-img" src="" alt="">
     <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
-
 <script src="assets/js/main.js"></script>
-
-<!-- WhatsApp Floating Button -->
 <style>
-.whatsapp-float {
-    position: fixed;
-    width: 62px;
-    height: 62px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    color: #FFF;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    animation: whatsapp-pulse 2s infinite;
-}
-.whatsapp-float:hover {
-    background-color: #128C7E;
-    transform: scale(1.08);
-}
-.whatsapp-float svg {
-    width: 32px;
-    height: 32px;
-}
-.whatsapp-tooltip {
-    position: absolute;
-    right: 72px;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-family: system-ui, -apple-system, sans-serif;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.whatsapp-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    transform: translateY(-50%);
-    border-width: 5px 0 5px 5px;
-    border-style: solid;
-    border-color: transparent transparent transparent #1a1a1a;
-}
-.whatsapp-float:hover .whatsapp-tooltip {
-    opacity: 1;
-}
-@keyframes whatsapp-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 58px;
-        height: 58px;
-        bottom: 20px;
-        right: 20px;
-    }
-    .whatsapp-tooltip {
-        display: none;
-    }
-}
+.whatsapp-float { position: fixed; width: 62px; height: 62px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50%; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; animation: whatsapp-pulse 2s infinite; }
+.whatsapp-float:hover { background-color: #128C7E; transform: scale(1.08); }
+.whatsapp-float svg { width: 32px; height: 32px; }
+.whatsapp-tooltip { position: absolute; right: 72px; background: #1a1a1a; color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-family: system-ui, -apple-system, sans-serif; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+.whatsapp-tooltip::after { content: ''; position: absolute; top: 50%; right: -5px; transform: translateY(-50%); border-width: 5px 0 5px 5px; border-style: solid; border-color: transparent transparent transparent #1a1a1a; }
+.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+@keyframes whatsapp-pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+@media (max-width: 768px) { .whatsapp-float { width: 58px; height: 58px; bottom: 20px; right: 20px; } .whatsapp-tooltip { display: none; } }
 </style>
 <a href="https://wa.me/263772900990?text=Hi%20Whitehead%20Vultures%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20programs." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
-    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.18-1.62A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22a9.88 9.88 0 0 1-5.04-1.38l-.36-.22-3.67.96.98-3.58-.24-.37A9.9 9.9 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.46-7.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-    </svg>
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.18-1.62A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22a9.88 9.88 0 0 1-5.04-1.38l-.36-.22-3.67.96.98-3.58-.24-.37A9.9 9.9 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.46-7.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
 </a>
-
 </body>
 </html>

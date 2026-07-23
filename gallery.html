@@ -1,419 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Gallery – 14 Photos Updated May 2026 | Whitehead Vultures</title>
-    <meta name="description" content="Christian-based sports academy in Harare since 1996. Developing youth through football, basketball, volleyball and athletics. Mabelreign, Harare, Zimbabwe.">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/images/logo.jpg">
-    <style>
-        /* 3 Columns + Alternating Text/Photo Layout */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-            margin-top: 28px;
-        }
-        @media (max-width: 1024px) {
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-        }
-        .gallery-item {
-            background: #fff;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-            border: 1px solid #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-            min-height: 380px;
-        }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 14px 28px rgba(0,0,0,0.13);
-        }
-        /* Alternating: even items have text on top, image bottom */
-        .gallery-item:nth-child(even) {
-            flex-direction: column-reverse;
-        }
-        /* For even items, add border line between */
-        .gallery-item:nth-child(even) .gallery-caption-box {
-            border-bottom: 1px solid #f3f4f6;
-            border-top: none;
-        }
-        .gallery-item:nth-child(odd) .gallery-caption-box {
-            border-top: 1px solid #f3f4f6;
-        }
-
-        .gallery-img-wrap {
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.06);
-        }
-        .gallery-caption-box {
-            padding: 16px 18px 18px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: #fff;
-        }
-        .gallery-caption-box h4 {
-            margin: 0 0 7px;
-            font-size: 15px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.3;
-        }
-        .gallery-caption-box p {
-            margin: 0;
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.55;
-        }
-        .gallery-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            padding: 4px 9px;
-            border-radius: 99px;
-            margin-bottom: 9px;
-            width: fit-content;
-        }
-        .tag-football { background: rgba(10,77,166,0.1); color: #0a4da6; }
-        .tag-training { background: rgba(37,211,102,0.14); color: #0f8a4b; }
-        .tag-team { background: rgba(227,27,35,0.09); color: #c41a22; }
-        .tag-faith { background: rgba(245,158,11,0.14); color: #92400e; }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.92);
-            z-index: 10000;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-        .lightbox.active { display: flex; }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 65vh;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-        }
-        .lightbox-caption { margin-top: 22px; color: white; max-width: 620px; width: 100%; }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            background: rgba(255,255,255,0.15);
-            border: none;
-            color: white;
-            font-size: 32px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            line-height: 1;
-            transition: background 0.2s;
-        }
-        .lightbox-close:hover { background: rgba(255,255,255,0.28); }
-    </style>
-</head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.jpg" alt="Whitehead Vultures Academy Logo" loading="eager">
-                <div class="logo-text">
-                    <div class="logo-title">Whitehead Vultures</div>
-                    <div class="logo-sub">Academy of Sports</div>
-                </div>
-            </a>
-            <nav class="nav" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="programs.html">Programs</a>
-                <a href="impact.html">Impact</a>
-                <a href="team.html">Team</a>
-                <a href="gallery.html" style="color:#0a4da6;font-weight:800;">Gallery</a>
-                <a href="sponsor.html">Sponsor</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <div class="mobile-nav" id="mobileNav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="programs.html">Programs</a>
-                <a href="impact.html">Impact</a>
-                <a href="team.html">Team</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="sponsor.html">Sponsor</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </div>
-</header>
-
-<main>
-<section class="section" id="gallery">
-<div class="container">
-<div class="gallery-intro">
-<div>
-<h2>Training in Action – Mabelreign, Harare</h2>
-<div style="display:inline-block; background:rgba(10,77,166,0.08); color:#0a4da6; padding:5px 12px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:0.5px; margin:8px 0 10px; text-transform:uppercase;"></div>
-<p>Team spirit that keeps our training dynamic since 1996.</p>
-</div>
-<div class="gallery-grid">
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Vultures Academy full squad training session" loading="lazy" src="assets/images/hero.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-team">Full Squad • Mabelreign Girls High</span>
-        <h4>Full Squad Training Session</h4>
-        <p>30 athletes aged 6-20 gather Tue, Thu & Sat. More than a team — a family moving youth from streets to pitch since 1996.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Youth players doing coordinated drills" loading="lazy" src="assets/images/gallery-01.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-training">Training • Discipline</span>
-        <h4>Coordinated Team Drills</h4>
-        <p>Precision and unity in action. Excellence comes from working together and moving as one unit on the pitch.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Intensive ball control training" loading="lazy" src="assets/images/about.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-football">Football • Skills</span>
-        <h4>Ball Control Mastery</h4>
-        <p>First touch, close control and confidence. Building the foundation for future stars from grassroots level.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Kids stretching and warming up on field" loading="lazy" src="assets/images/gallery-02.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-training">Warm-Up • Discipline</span>
-        <h4>Stretching & Warm-Up Routine</h4>
-        <p>Every session starts right. Teaching preparation, injury prevention and respect for the body as God’s temple.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Coach watching player technique" loading="lazy" src="assets/images/gallery-03.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-team">Coaching • Mentorship</span>
-        <h4>One-on-One Coaching</h4>
-        <p>Personal attention matters. Mentoring each child individually to correct technique and build confidence.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Coaches collaborating during training" loading="lazy" src="assets/images/gallery-04.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-faith">Leadership • Faith</span>
-        <h4>Coaches Planning Session</h4>
-        <p>Dedicated, faith-based coaching team collaborating. Professional guidance rooted in Christian values.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Pink bibs running drill" loading="lazy" src="assets/images/gallery-05.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-training">Fitness • Speed</span>
-        <h4>Speed & Agility Drills</h4>
-        <p>Pink bibs pushing through speed work. Building fitness and offering healthy alternative to drugs and alcohol.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Pink bibs endurance running" loading="lazy" src="assets/images/gallery-06.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-training">Endurance • Character</span>
-        <h4>Endurance & Mental Toughness</h4>
-        <p>Stamina and resilience training. Teaching youth to never give up — lessons beyond the football pitch.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Team stretching and cool down" loading="lazy" src="assets/images/gallery-07.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-faith">Community • Recovery</span>
-        <h4>Cool Down & Team Spirit</h4>
-        <p>Recovery and reflection together. Emphasizing friendship, prayer and Christian fellowship after sessions.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Red kits running warm-up" loading="lazy" src="assets/images/gallery-08.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-training">Saturday Session • 9AM</span>
-        <h4>Saturday Morning Warm-Up</h4>
-        <p>Red kits in motion at Mabelreign Girls High. Saturday 9AM-11AM brings energy and hope to Harare youth.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Team huddle in orange kits" loading="lazy" src="assets/images/gallery-09.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-faith">Faith • Unity</span>
-        <h4>Team Huddle & Prayer Circle</h4>
-        <p>Unity in orange. Before every game we pray, committing to integrity, respect and excellence for God’s glory.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Coach talking to orange team wide shot" loading="lazy" src="assets/images/gallery-10.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-team">Tactics • Teamwork</span>
-        <h4>Tactical Talk — Wide View</h4>
-        <p>Game strategy for the orange squad. Developing football intelligence for players from Harare to Norton.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Coach giving tactical talk up close" loading="lazy" src="assets/images/gallery-11.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-team">Mentorship • Excellence</span>
-        <h4>Mentorship Moment</h4>
-        <p>Close guidance from experienced coaches. Instilling discipline, respect and faith through sport.</p>
-    </div>
-</div>
-
-<div class="gallery-item">
-    <div class="gallery-img-wrap"><img alt="Full team photo in orange kits with coach" loading="lazy" src="assets/images/gallery-12.jpg"/></div>
-    <div class="gallery-caption-box">
-        <span class="gallery-tag tag-faith">Family • Since 1996</span>
-        <h4>The Vultures Family — Class of 2026</h4>
-        <p>Full team in orange kits with coaches. From Harare, Chitungwiza, Ruwa, Marondera and Norton — one family, one dream.</p>
-    </div>
-</div>
-
-</div>
-</div>
-</div></section>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="assets/images/logo.jpg" alt="Vultures logo">
-                <div>
-                    <div class="footer-title">Whitehead Vultures Academy of Sports</div>
-                    <div class="footer-sub">Faith Based • Established 1996 • Mabelreign, Harare</div>
-                </div>
-            </div>
-            <div class="footer-copy">© 2026 Whitehead Vultures Academy of Sports. All rights reserved.</div>
-        </div>
-    </div>
-    <div style="text-align:center;padding:20px 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:30px;font-size:0.9rem;opacity:0.8;">Site developed and maintained by <a href="https://nextgridtechnologies.co.za" target="_blank" style="color:#1e90ff;">nextgridtechnologies.co.za</a></div>
-</footer>
-
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close" aria-label="Close">×</button>
-    <img id="lightbox-img" src="" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
-
-<script src="assets/js/main.js"></script>
-
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Training Gallery – 14 Photos Updated May 2026 | Whitehead Vultures</title><link rel="stylesheet" href="assets/css/style.css"><link rel="icon" href="assets/images/logo.jpg">
 <style>
-.whatsapp-float {
-    position: fixed; width: 62px; height: 62px; bottom: 25px; right: 25px;
-    background-color: #25D366; color: #FFF; border-radius: 50%; text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; display: flex;
-    align-items: center; justify-content: center; transition: all 0.3s ease;
-    text-decoration: none; animation: whatsapp-pulse 2s infinite;
-}
-.whatsapp-float:hover { background-color: #128C7E; transform: scale(1.08); }
-.whatsapp-float svg { width: 32px; height: 32px; }
-.whatsapp-tooltip {
-    position: absolute; right: 72px; background: #1a1a1a; color: #fff;
-    padding: 8px 14px; border-radius: 6px; font-size: 13px;
-    font-family: system-ui, -apple-system, sans-serif; white-space: nowrap;
-    opacity: 0; pointer-events: none; transition: opacity 0.3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.whatsapp-tooltip::after {
-    content: ''; position: absolute; top: 50%; right: -5px; transform: translateY(-50%);
-    border-width: 5px 0 5px 5px; border-style: solid;
-    border-color: transparent transparent transparent #1a1a1a;
-}
-.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
-@keyframes whatsapp-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-@media (max-width: 768px) {
-    .whatsapp-float { width: 58px; height: 58px; bottom: 20px; right: 20px; }
-    .whatsapp-tooltip { display: none; }
-}
-</style>
-<a href="https://wa.me/263772900990?text=Hi%20Whitehead%20Vultures%20Academy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20programs." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
-    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.18-1.62A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22a9.88 9.88 0 0 1-5.04-1.38l-.36-.22-3.67.96.98-3.58-.24-.37A9.9 9.9 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.46-7.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
-</a>
-
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}@media(max-width:1024px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.gallery-grid{grid-template-columns:1fr}}
+.gallery-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.08);border:1px solid #f0f0f0;display:flex;flex-direction:column;transition:all 0.35s;min-height:380px}
+.gallery-item:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(0,0,0,0.13)}
+.gallery-item:nth-child(even){flex-direction:column-reverse}
+.gallery-img-wrap{position:relative;overflow:hidden;flex-shrink:0}
+.gallery-item img{width:100%;height:230px;object-fit:cover;display:block;cursor:zoom-in;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-caption-box{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.gallery-caption-box h4{margin:0 0 7px;font-size:15px;font-weight:800;color:#111827;line-height:1.3}
+.gallery-caption-box p{margin:0;font-size:13px;color:#6b7280;line-height:1.55}
+.gallery-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;padding:4px 9px;border-radius:99px;margin-bottom:9px;width:fit-content}
+.tag-football{background:rgba(10,77,166,0.1);color:#0a4da6}.tag-training{background:rgba(37,211,102,0.14);color:#0f8a4b}.tag-team{background:rgba(227,27,35,0.09);color:#c41a22}.tag-faith{background:rgba(245,158,11,0.14);color:#92400e}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:10000;align-items:center;justify-content:center;flex-direction:column;padding:40px 20px}.lightbox.active{display:flex}.lightbox img{max-width:90%;max-height:65vh;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.6)}.lightbox-caption{margin-top:22px;color:white;max-width:620px;width:100%}.lightbox-close{position:absolute;top:20px;right:25px;background:rgba(255,255,255,0.15);border:none;color:white;font-size:32px;width:44px;height:44px;border-radius:50%;cursor:pointer}
+</style></head><body>
+<header class="header"><div class="container"><div class="header-inner"><a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="Logo"><div class="logo-text"><div class="logo-title">Whitehead Vultures</div><div class="logo-sub">Academy of Sports</div></div></a>
+<nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="impact.html">Impact</a><a href="team.html">Team</a><a href="gallery.html" style="color:#0a4da6;font-weight:800;">Gallery</a><a href="sponsor.html">Sponsor</a><a href="contact.html">Contact</a></nav>
+<button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button><div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="impact.html">Impact</a><a href="team.html">Team</a><a href="gallery.html">Gallery</a><a href="sponsor.html">Sponsor</a><a href="contact.html">Contact</a></div></div></div></header>
+<main><section class="section" id="gallery"><div class="container"><div class="gallery-intro"><div><h2>Training in Action – Mabelreign, Harare</h2><div style="display:inline-block;background:rgba(10,77,166,0.08);color:#0a4da6;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:0.5px;margin:8px 0 10px;text-transform:uppercase;">14 photos • 3 columns • Alternating layout</div><p>Click any photo to enlarge. Alternating text top/bottom for dynamic flow — same spirit that keeps training dynamic since 1996.</p></div><div class="gallery-grid">
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Full squad" src="assets/images/hero.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-team">Full Squad • Mabelreign</span><h4>Full Squad Training Session</h4><p>30 athletes aged 6-20 gather Tue, Thu & Sat. More than team — family moving youth from streets to pitch since 1996.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Drills" src="assets/images/gallery-01.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-training">Training • Discipline</span><h4>Coordinated Team Drills</h4><p>Precision and unity in action. Excellence comes from working together and moving as one unit.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Ball control" src="assets/images/about.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-football">Football • Skills</span><h4>Ball Control Mastery</h4><p>First touch, close control and confidence. Building foundation for future stars from grassroots.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Stretching" src="assets/images/gallery-02.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-training">Warm-Up • Discipline</span><h4>Stretching & Warm-Up</h4><p>Every session starts right. Teaching preparation and respect for body as God's temple.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Coach technique" src="assets/images/gallery-03.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-team">Coaching • Mentorship</span><h4>One-on-One Coaching</h4><p>Personal attention matters. Mentoring each child individually to build confidence.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Coaches collaborating" src="assets/images/gallery-04.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-faith">Leadership • Faith</span><h4>Coaches Planning Session</h4><p>Dedicated faith-based team collaborating. Guidance rooted in Christian values.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Pink bibs running" src="assets/images/gallery-05.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-training">Fitness • Speed</span><h4>Speed & Agility Drills</h4><p>Pink bibs pushing through speed work. Healthy alternative to drugs and alcohol.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Endurance" src="assets/images/gallery-06.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-training">Endurance • Character</span><h4>Endurance & Mental Toughness</h4><p>Stamina and resilience training. Teaching youth to never give up.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Cool down" src="assets/images/gallery-07.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-faith">Community • Recovery</span><h4>Cool Down & Team Spirit</h4><p>Recovery and reflection together. Friendship, prayer and fellowship after sessions.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Red kits" src="assets/images/gallery-08.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-training">Saturday • 9AM</span><h4>Saturday Morning Warm-Up</h4><p>Red kits in motion at Mabelreign Girls High. Saturday 9-11AM brings energy and hope.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Huddle orange" src="assets/images/gallery-09.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-faith">Faith • Unity</span><h4>Team Huddle & Prayer Circle</h4><p>Unity in orange. Before every game we pray, committing to integrity and excellence.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Tactical wide" src="assets/images/gallery-10.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-team">Tactics • Teamwork</span><h4>Tactical Talk — Wide View</h4><p>Game strategy for orange squad. Developing football intelligence from Harare to Norton.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Tactical close" src="assets/images/gallery-11.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-team">Mentorship • Excellence</span><h4>Mentorship Moment</h4><p>Close guidance from experienced coaches. Instilling discipline and faith.</p></div></div>
+<div class="gallery-item"><div class="gallery-img-wrap"><img alt="Full team photo" src="assets/images/gallery-12.jpg"/></div><div class="gallery-caption-box"><span class="gallery-tag tag-faith">Family • Since 1996</span><h4>The Vultures Family — Class of 2026</h4><p>Full team in orange kits with coaches. From Harare, Chitungwiza, Ruwa, Marondera and Norton — one family.</p></div></div>
+</div></div></div></section></main>
+<footer class="footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><img src="assets/images/logo.jpg" alt="logo"><div><div class="footer-title">Whitehead Vultures Academy of Sports</div><div class="footer-sub">Faith Based • Established 1996 • Mabelreign, Harare</div></div></div><div class="footer-copy">© 2026 Whitehead Vultures Academy of Sports. All rights reserved.</div></div></div><div style="text-align:center;padding:20px 0;border-top:1px solid rgba(255,255,255,0.1);margin-top:30px;font-size:0.9rem;opacity:0.8;">Site developed and maintained by <a href="https://nextgridtechnologies.co.za" target="_blank" style="color:#1e90ff;">nextgridtechnologies.co.za</a></div></footer>
+<div class="lightbox" id="lightbox"><button class="lightbox-close">×</button><img id="lightbox-img" src="" alt=""><div class="lightbox-caption" id="lightbox-caption"></div></div>
+<script src="assets/js/main.js"></script>
+<style>.whatsapp-float{position:fixed;width:62px;height:62px;bottom:25px;right:25px;background-color:#25D366;color:#FFF;border-radius:50%;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:9999;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;text-decoration:none;animation:whatsapp-pulse 2s infinite}.whatsapp-float:hover{background-color:#128C7E;transform:scale(1.08)}.whatsapp-float svg{width:32px;height:32px}.whatsapp-tooltip{position:absolute;right:72px;background:#1a1a1a;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.3s}.whatsapp-float:hover .whatsapp-tooltip{opacity:1}@keyframes whatsapp-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}@media(max-width:768px){.whatsapp-float{width:58px;height:58px;bottom:20px;right:20px}.whatsapp-tooltip{display:none}}</style>
+<a href="https://wa.me/263772900990?text=Hi%20Whitehead%20Vultures%20Academy" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><span class="whatsapp-tooltip">Chat with us on WhatsApp</span><svg viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.18-1.62A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22a9.88 9.88 0 0 1-5.04-1.38l-.36-.22-3.67.96.98-3.58-.24-.37A9.9 9.9 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.46-7.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.querySelector('.lightbox-close');
-  if(!lightbox || !lightboxImg || !lightboxCaption) return;
-  const galleryImages = document.querySelectorAll('.gallery-item img');
-  galleryImages.forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-      const item = img.closest('.gallery-item');
-      const captionBox = item.querySelector('.gallery-caption-box');
-      const title = captionBox ? captionBox.querySelector('h4')?.innerText : img.alt;
-      const desc = captionBox ? captionBox.querySelector('p')?.innerText : '';
-      const tag = captionBox ? captionBox.querySelector('.gallery-tag')?.innerText : '';
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaption.innerHTML = `<div style="text-align:left; max-width:600px; margin:0 auto; padding:0 10px;"><div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#25D366; margin-bottom:6px;">${tag}</div><div style="font-size:19px; font-weight:800; color:white; margin-bottom:8px; line-height:1.3;">${title}</div><div style="font-size:14px; color:rgba(255,255,255,0.85); line-height:1.5;">${desc}</div></div>`;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+document.addEventListener('DOMContentLoaded',function(){
+  const lightbox=document.getElementById('lightbox'), lightboxImg=document.getElementById('lightbox-img'), lightboxCaption=document.getElementById('lightbox-caption'), closeBtn=document.querySelector('.lightbox-close');
+  if(!lightbox||!lightboxImg||!lightboxCaption) return;
+  document.querySelectorAll('.gallery-item img').forEach(img=>{
+    img.addEventListener('click',()=>{
+      const item=img.closest('.gallery-item'), box=item.querySelector('.gallery-caption-box');
+      const title=box?box.querySelector('h4').innerText:img.alt, desc=box?box.querySelector('p').innerText:'', tag=box?box.querySelector('.gallery-tag').innerText:'';
+      lightboxImg.src=img.src; lightboxImg.alt=img.alt;
+      lightboxCaption.innerHTML=`<div style="text-align:left;max-width:600px;margin:0 auto;padding:0 10px;"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#25D366;margin-bottom:6px;">${tag}</div><div style="font-size:19px;font-weight:800;color:white;margin-bottom:8px;line-height:1.3;">${title}</div><div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">${desc}</div></div>`;
+      lightbox.classList.add('active'); document.body.style.overflow='hidden';
     });
   });
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+  function closeLB(){lightbox.classList.remove('active');document.body.style.overflow='';}
+  if(closeBtn) closeBtn.addEventListener('click',closeLB);
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox) closeLB()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') closeLB()});
 });
 </script>
-
-</body>
-</html>
+</body></html>
