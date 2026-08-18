@@ -7,6 +7,15 @@
     <meta name="description" content="Christian-based sports academy in Harare since 1996. Developing youth through football, basketball, volleyball and athletics. Mabelreign, Harare, Zimbabwe.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/logo.jpg">
+
+<style id="critical-fix">
+.programs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:24px 0 32px}
+@media(max-width:1024px){.programs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.programs-grid{grid-template-columns:1fr}}
+.program-card{background:white;border:1px solid #eef2f7;border-radius:16px;padding:22px 20px}
+.program-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
+</style>
+
 </head>
 <body>
 
@@ -177,56 +186,70 @@
 </div>
 </section>
 
+
 <section class="section" id="upcoming-events" style="background:#f8fafc; border-top:1px solid #eef2f7; border-bottom:1px solid #eef2f7; padding:48px 0;">
 <div class="container">
     <div style="text-align:center; max-width:760px; margin:0 auto 28px;">
-        <div style="display:inline-block;background:rgba(227,27,35,0.10);color:#e31b23;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">📅 Upcoming Events</div>
-        <h2 style="font-size:32px;font-weight:900;letter-spacing:-0.5px;">Don't Miss What's Next</h2>
-        <p style="color:#5a6473;font-size:16px;margin-top:8px;line-height:1.6;">Special training, tournaments and community outreach — join the Vultures family at Mabelreign Girls High.</p>
+        <div style="display:inline-block;background:rgba(227,27,35,0.10);color:#e31b23;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">⚽ Soccer Match Day • Aug 20</div>
+        <h2 style="font-size:34px;font-weight:900;letter-spacing:-0.6px;">Whitehead Vultures vs Generosity</h2>
+        <p style="color:#5a6473;font-size:16px;margin-top:8px;line-height:1.6;">Thursday 20 August 2026 • 12:00 PM • Ellis Robins Lower Grounds</p>
     </div>
     <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap:22px; align-items:start;">
-        <!-- Video Card -->
+        <!-- Match Poster + Video -->
         <div style="background:white;border:1px solid #eef2f7;border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.07);">
             <div style="position:relative;background:#000;">
-                <video controls preload="metadata" poster="assets/images/hero.jpg" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;">
+                <img src="images/match-aug20.png" alt="Soccer Match Day - Whitehead Vultures vs Generosity - 20 Aug 2026" style="width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover;">
+                <div style="position:absolute;top:12px;left:12px;background:#0a4da6;color:white;font-size:10px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;padding:6px 10px;border-radius:99px;">🔥 Match Day Poster</div>
+            </div>
+            <div style="padding:0;">
+                <video controls preload="metadata" poster="images/match-aug20.png" style="width:100%;height:auto;display:block;background:#000;aspect-ratio:16/9;object-fit:contain;">
                     <source src="/images/Aug20.mp4" type="video/mp4">
-                    <source src="/images/Aug20.MP4" type="video/mp4">
-                    <source src="/images/Aug20.mov" type="video/quicktime">
-                    <source src="/images/Aug20" type="video/mp4">
                     <source src="images/Aug20.mp4" type="video/mp4">
+                    <source src="/images/Aug20.MP4" type="video/mp4">
                     <source src="assets/images/Aug20.mp4" type="video/mp4">
-                    <source src="images/Aug20" type="video/mp4">
-                    Your browser does not support the video tag. <a href="/images/Aug20.mp4">Download Aug20 video</a>
+                    <source src="/images/Aug20" type="video/mp4">
+                    <source src="images/match-aug20.png" type="image/png">
+                    Your browser does not support video. <a href="/images/Aug20.mp4">Download Aug20 video</a>
                 </video>
-                <div style="position:absolute;top:12px;left:12px;background:rgba(227,27,35,0.95);color:white;font-size:10px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;padding:6px 10px;border-radius:99px;">▶ Aug 20 Feature</div>
             </div>
             <div style="padding:18px 20px 20px;">
-                <div style="font-size:11px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:#e31b23;margin-bottom:6px;">Featured • August 20, 2026 • Mabelreign</div>
-                <h3 style="font-size:19px;font-weight:900;margin:0 0 8px;letter-spacing:-0.3px;">August 20 – Special Academy Day</h3>
-                <p style="font-size:13.5px;color:#4b5563;line-height:1.6;margin:0 0 14px;">Our latest update is live! Watch the <strong>Aug20</strong> video from <code>/images</code> — highlights, announcements and what to expect next. Save the date and bring a friend.</p>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                    <img src="assets/images/logo.jpg" alt="Whitehead" style="width:36px;height:36px;border-radius:50%;border:1px solid #eef2f7;object-fit:cover;">
+                    <div style="font-size:12px;font-weight:800;">WHITEHEAD VULTURES</div>
+                    <div style="background:#111827;color:white;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:900;">VS</div>
+                    <div style="font-size:12px;font-weight:800;">GENEROSITY</div>
+                </div>
+                <h3 style="font-size:19px;font-weight:900;margin:0 0 8px;letter-spacing:-0.3px;">Soccer Match Day – Aug 20</h3>
+                <p style="font-size:13.5px;color:#4b5563;line-height:1.6;margin:0 0 14px;">Official fixture: Whitehead Vultures Academy vs Generosity Sports Academy. Come support the Vultures at Ellis Robins Lower Grounds. Kick-off 12:00 PM sharp.</p>
                 <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                    <span style="background:#f8fafc;border:1px solid #e5e7eb;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:600;">📍 Mabelreign Girls High</span>
-                    <span style="background:#f8fafc;border:1px solid #e5e7eb;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:600;">⏰ 2PM – 4PM</span>
+                    <span style="background:#f8fafc;border:1px solid #e5e7eb;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:600;">📅 Thu 20 Aug 2026</span>
+                    <span style="background:#f8fafc;border:1px solid #e5e7eb;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:600;">⏰ 12:00 PM</span>
+                    <span style="background:#f8fafc;border:1px solid #e5e7eb;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:600;">📍 Ellis Robins Lower Grounds</span>
                     <span style="background:#0a4da6;color:white;padding:6px 10px;border-radius:99px;font-size:11px;font-weight:700;">🎥 Video: Aug20</span>
                 </div>
             </div>
         </div>
-        <!-- Event List -->
+        <!-- Details List -->
         <div style="display:flex;flex-direction:column;gap:14px;">
-            <div style="background:white;border:1px solid #eef2f7;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
-                <div style="background:#0a4da6;color:white;border-radius:10px;min-width:54px;text-align:center;padding:8px 0;"><div style="font-size:11px;font-weight:800;text-transform:uppercase;opacity:0.8;">Aug</div><div style="font-size:22px;font-weight:900;line-height:1;">20</div></div>
-                <div><h4 style="font-size:14px;font-weight:800;margin:0 0 4px;">Academy Showcase & Trials</h4><p style="font-size:12.5px;color:#6b7280;margin:0;line-height:1.5;">Open trials for ages 6-20, skills showcase and parent briefing. New intakes welcome.</p><div style="margin-top:8px;font-size:11px;font-weight:700;color:#0a4da6;">2PM • Mabelreign Girls High</div></div>
+            <div style="background:white;border:1px solid #eef2f7;border-radius:14px;padding:18px 20px;">
+                <div style="font-size:11px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:#0a4da6;margin-bottom:8px;">Match Details</div>
+                <div style="display:grid;gap:10px;font-size:13px;">
+                    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:8px;"><span style="color:#6b7280;">Fixture</span><strong>Whitehead Vultures vs Generosity</strong></div>
+                    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:8px;"><span style="color:#6b7280;">Date</span><strong>Thursday 20 August 2026</strong></div>
+                    <div style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:8px;"><span style="color:#6b7280;">Kick-off</span><strong>12:00 PM</strong></div>
+                    <div style="display:flex;justify-content:space-between;"><span style="color:#6b7280;">Venue</span><strong>Ellis Robins Lower Grounds</strong></div>
+                </div>
+            </div>
+            <div style="background:#0a4da6;color:white;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+                <div style="background:white;color:#0a4da6;border-radius:10px;min-width:54px;text-align:center;padding:8px 0;"><div style="font-size:11px;font-weight:800;text-transform:uppercase;opacity:0.7;">Aug</div><div style="font-size:22px;font-weight:900;line-height:1;">20</div></div>
+                <div><h4 style="font-size:14px;font-weight:800;margin:0 0 4px;">Soccer Match Day – Main Event</h4><p style="font-size:12.5px;color:rgba(255,255,255,0.85);margin:0;line-height:1.5;">Official league/clash vs Generosity Sports Academy. All supporters welcome.</p><div style="margin-top:8px;font-size:11px;font-weight:700;color:#93c5fd;">12:00 PM • Ellis Robins</div></div>
             </div>
             <div style="background:white;border:1px solid #eef2f7;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
                 <div style="background:#111827;color:white;border-radius:10px;min-width:54px;text-align:center;padding:8px 0;"><div style="font-size:11px;font-weight:800;text-transform:uppercase;opacity:0.7;">Aug</div><div style="font-size:22px;font-weight:900;line-height:1;">23</div></div>
-                <div><h4 style="font-size:14px;font-weight:800;margin:0 0 4px;">Saturday Community Match Day</h4><p style="font-size:12.5px;color:#6b7280;margin:0;line-height:1.5;">Inter-academy friendlies – Football, Basketball, Volleyball. All 5 communities.</p><div style="margin-top:8px;font-size:11px;font-weight:700;color:#111827;">9AM • Mabelreign Girls High</div></div>
+                <div><h4 style="font-size:14px;font-weight:800;margin:0 0 4px;">Saturday Community Match Day</h4><p style="font-size:12.5px;color:#6b7280;margin:0;line-height:1.5;">Inter-academy friendlies – Football, Basketball, Volleyball.</p><div style="margin-top:8px;font-size:11px;font-weight:700;color:#111827;">9AM • Mabelreign Girls High</div></div>
             </div>
-            <div style="background:white;border:1px solid #eef2f7;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
-                <div style="background:#e31b23;color:white;border-radius:10px;min-width:54px;text-align:center;padding:8px 0;"><div style="font-size:11px;font-weight:800;text-transform:uppercase;opacity:0.9;">Aug</div><div style="font-size:22px;font-weight:900;line-height:1;">30</div></div>
-                <div><h4 style="font-size:14px;font-weight:800;margin:0 0 4px;">Faith & Life Skills Workshop</h4><p style="font-size:12.5px;color:#6b7280;margin:0;line-height:1.5;">Health awareness, discipline and purpose – faith-based mentorship session.</p><div style="margin-top:8px;font-size:11px;font-weight:700;color:#e31b23;">10AM • Academy Hall</div></div>
-            </div>
-            <a href="events.html" style="display:block;text-align:center;background:#111827;color:white;padding:12px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;margin-top:2px;">View All Events →</a>
-            <a href="https://wa.me/263772900990?text=Hi%20Vultures%20Academy%2C%20I%20want%20to%20join%20the%20Aug%2020%20event" style="display:block;text-align:center;background:#25D366;color:white;padding:12px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;">💬 RSVP via WhatsApp</a>
+            <a href="events.html" style="display:block;text-align:center;background:#111827;color:white;padding:12px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;">View Full Fixture →</a>
+            <a href="https://wa.me/263772900990?text=Hi%20Vultures%20Academy%2C%20I%20will%20attend%20the%20Match%20Day%20on%2020%20Aug%20at%20Ellis%20Robins%20-%20Whitehead%20vs%20Generosity" style="display:block;text-align:center;background:#25D366;color:white;padding:12px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;">💬 Confirm Attendance on WhatsApp</a>
         </div>
     </div>
 </div>
@@ -236,6 +259,7 @@
 }
 </style>
 </section>
+
 
 </main>
 
